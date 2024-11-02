@@ -1,0 +1,113 @@
+floating_maximum_size 1920x1080
+
+set $mod Mod4
+
+new_window pixel 3
+new_float pixel 3
+
+hide_edge_borders none
+
+bindsym $mod+u border none
+bindsym $mod+y border pixel 3
+
+font xft: Hack 10
+
+#floating_modifier $mod
+
+#bindsym $mod+Return exec alacritty --no-startup-id
+
+bindsym $mod+q kill
+bindsym $mod+Shift+d exec dmenu
+bindsym $mod+d exec "rofi -show window -modi window,run,drun"
+bindsym $mod+F2 exec firefox 
+bindsym $mod+F3 exec alacritty -e ranger
+bindsym $mod+F5 exec steam
+
+bindsym $mod+Return exec alacritty
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left 40px
+bindsym $mod+Shift+j move down 40px
+bindsym $mod+Shift+k move up 40px
+bindsym $mod+Shift+l move right 40px
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+bindsym $mod+g split h
+bindsym $mod+v split v
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Shift+s sticky toggle
+
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+minus move scratchpad
+
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+for_window [class="mpv"] floating enable
+for_window [class="feh"] floating enable
+
+exec_always ~/.config/polybar/launch.sh --no-startup-id
+
+gaps inner 15
+gaps outer -5
+
+smart_borders on
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym k  gaps inner current plus 5
+        bindsym j gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym k  gaps outer current plus 5
+        bindsym j gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

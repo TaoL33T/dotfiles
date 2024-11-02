@@ -1,0 +1,54 @@
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x727072"
+blue = "0xfc9867"
+cyan = "0x78dce8"
+green = "0xa9dc76"
+magenta = "0xab9df2"
+red = "0xff6188"
+white = "0xfcfcfa"
+yellow = "0xffd866"
+
+[colors.normal]
+black = "0x403e41"
+blue = "0xfc9867"
+cyan = "0x78dce8"
+green = "0xa9dc76"
+magenta = "0xab9df2"
+red = "0xff6188"
+white = "0xfcfcfa"
+yellow = "0xffd866"
+
+[colors.primary]
+background = "#201b25"
+foreground = "#dedede"
+
+[cursor]
+style = "Beam"
+
+[font]
+size = 11.76
+
+[font.bold]
+family = "Hack"
+style = "Bold"
+
+[font.normal]
+family = "Hack"
+
+[font.offset]
+x = 0
+y = 1
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 9
+y = 9

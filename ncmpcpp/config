@@ -1,0 +1,17 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+mpd_music_dir = /mnt/media/Music/
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+
+visualizer_type = "spectrum"
+visualizer_in_stereo = "yes"
+visualizer_look = "+|"
+
+display_bitrate = "yes"
